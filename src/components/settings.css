@@ -1,48 +1,70 @@
 .settings-container {
-    background-color: #F2F2F2;
-    border: 1px solid #E0E0E0;
-    border-radius: 4px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  .settings-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .settings-label {
-    display: block;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .settings-input {
-    display: block;
-    border: 1px solid #E0E0E0;
-    border-radius: 4px;
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    width: 100%;
-  }
-  
-  .Settings button [type="submit"] {
-    background-color: #0066CC;
-    color: #FFFFFFFF;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  .settings-button:hover {
-    background-color: #0052A3;
-  }
-  
+  background-color: #3ed2cd;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.section-container {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 40px;
+}
+
+.settings-h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.settings-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.settings-label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.settings-input {
+  display: block;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.settings-button[type="submit"] {
+  background-color: #0066cc;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.settings-button:hover {
+  background-color: #0052a3;
+}
+
+.color-preview {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 10px;
+}

@@ -1,43 +1,68 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./settings.css";
-function SettingsPage() {
-  const [username, setUsername] = useState(''); 
-  const [password, setPassword] = useState(''); 
-  const [backgroundColor, setBackgroundColor] = useState('#FFFFFF');
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
+function Settings() {
+  //useState for controlling the chat screen background color
+  const [bgColor, setBgColor] = useState("#ffffff");
 
-  const handleBackgroundColorChange = (event) => {
-    setBackgroundColor(event.target.value);
-  };
-
-  const handleSaveSettings = () => {
-    
+  //handler function for changing the chat screen background color
+  const handleColorChange = (e) => {
+    setBgColor(e.target.value);
   };
 
   return (
-    <div>
-      <h2>Settings</h2>
-      <label>
-        Username:
-        <input type="text" value={username} onChange={handleUsernameChange} />
-      </label>
-      <label>
-        Password:
-        <input type="password" value={password} onChange={handlePasswordChange} />
-      </label>
-      <label>
-        Chat Screen Background Color:
-        <input type="color" value={backgroundColor} onChange={handleBackgroundColorChange} />
-      </label>
-      <button classname="btnh" onClick={handleSaveSettings}>Save Settings</button>
+    <div className="settings-container">
+      <div className="section-container">
+        <h2>User Account</h2>
+        {/*Form for updating user account details*/}
+        <form>
+          <label htmlFor="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label htmlFor="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+
+          <button type="submit">Update</button>
+        </form>
+      </div>
+
+      <div className="section-container">
+        <h2>Profile Changes</h2>
+        {/*Form for updating profile details*/}
+        <form>
+          <label htmlFor="profile-pic">Profile Picture:</label>
+          <input type="file" id="profile-pic" name="profile-pic" />
+
+          <label htmlFor="bio">Bio:</label>
+          <textarea id="bio" name="bio"></textarea>
+
+          <button type="submit">Update</button>
+        </form>
+      </div>
+
+      <div className="section-container">
+        <h2>Chat Screen Background Color Changer</h2>
+        {/*Input field for changing the chat screen background color*/}
+        <label htmlFor="bg-color">Background Color:</label>
+        <input
+          type="color"
+          id="bg-color"
+          name="bg-color"
+          value={bgColor}
+          onChange={handleColorChange}
+        />
+
+        {/*Preview box for showing the selected color*/}
+        <div
+          className="color-preview"
+          style={{ backgroundColor: bgColor }}
+        ></div>
+      </div>
     </div>
   );
 }
 
-export default SettingsPage;
+export default Settings;
